@@ -242,7 +242,15 @@ map <leader>nf :NERDTreeFind<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:multi_cursor_use_default_mapping=0
 
-" Default mapping
+" Default mapping, use c-s need to put 
+" stty -ixon
+" in ~/.bashrc 
+" 
+" stty stop undef
+" stty start undef
+" in ~/.zshrc
+"
+" to disable c-s c-q in tty
 let g:multi_cursor_start_word_key      = '<C-s>'
 let g:multi_cursor_select_all_word_key = '<A-s>'
 let g:multi_cursor_start_key           = 'g<C-s>'
