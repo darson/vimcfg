@@ -190,6 +190,11 @@ endfunction
 vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
 vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 
+""""""""""""""""""""""""""""""
+" => Customize key mapping
+""""""""""""""""""""""""""""""
+" useful for manual debugging, vim 8.0+ required
+map <F10> :vertical terminal<cr>
 
 
 """"""""""""""""""""""""""""""
@@ -267,4 +272,4 @@ let g:multi_cursor_quit_key            = '<Esc>'
 """"""""""""""""""""""""""""""
 " => Tagbar
 """"""""""""""""""""""""""""""
-map <leader>tt :TagbarToggle<CR><c-w><c-w>
+map <F8> :TagbarToggle<CR><c-w><c-w>
