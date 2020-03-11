@@ -128,6 +128,9 @@ map <F3> :tabnext<cr>
 map <leader>tf :tabfirst<cr>
 map <leader>tl :tablast<cr>
 
+" Command line mode, c-a goto the beginning
+cnoremap <C-A> <Home>
+
 " jump to the last position when reopening a file
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
