@@ -212,7 +212,6 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'preservim/nerdcommenter'
-Plug 'davidhalter/jedi-vim'
 
 call plug#end()
 
@@ -240,9 +239,4 @@ map <leader>nf :NERDTreeFind<cr>
 " => Tagbar
 """"""""""""""""""""""""""""""
 map <F8> :TagbarToggle<CR><c-w><c-w>
-
-""""""""""""""""""""""""""""""
-" => Jedi-vim
-""""""""""""""""""""""""""""""
-let g:jedi#popup_on_dot = 0
 
