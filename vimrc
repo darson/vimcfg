@@ -195,6 +195,9 @@ vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 " useful for manual debugging, vim 8.0+ required
 map <F10> :vertical terminal<cr>
 
+" run auto command like rsync to remote
+map <F5> :call term_start("/bin/bash "..getcwd().."/run.sh", {"vertical":1})<cr>
+
 
 """"""""""""""""""""""""""""""
 " => Plugins
@@ -209,6 +212,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'preservim/nerdcommenter'
+Plug 'davidhalter/jedi-vim'
 
 call plug#end()
 
@@ -236,3 +240,9 @@ map <leader>nf :NERDTreeFind<cr>
 " => Tagbar
 """"""""""""""""""""""""""""""
 map <F8> :TagbarToggle<CR><c-w><c-w>
+
+""""""""""""""""""""""""""""""
+" => Jedi-vim
+""""""""""""""""""""""""""""""
+let g:jedi#popup_on_dot = 0
+
