@@ -162,33 +162,6 @@ set si "Smart indent
 set wrap "Wrap lines
 
 
-
-""""""""""""""""""""""""""""""
-" => Visual mode related
-""""""""""""""""""""""""""""""
-" Visual mode pressing * or # searches for the current selection
-" Super useful! From an idea by Michael Naumann
-
-function! VisualSelection(direction, extra_filter) range
-    let l:saved_reg = @"
-    execute "normal! vgvy"
-
-    let l:pattern = escape(@", "\\/.*'$^~[]")
-    let l:pattern = substitute(l:pattern, "\n$", "", "")
-
-    if a:direction == 'gv'
-        call CmdLine("Ack '" . l:pattern . "' " )
-    elseif a:direction == 'replace'
-        call CmdLine("%s" . '/'. l:pattern . '/')
-    endif
-
-    let @/ = l:pattern
-    let @" = l:saved_reg
-endfunction
-
-vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
-vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
-
 """"""""""""""""""""""""""""""
 " => Customize key mapping
 """"""""""""""""""""""""""""""
@@ -196,7 +169,15 @@ vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 map <F10> :vertical terminal<cr>
 
 " run auto command like rsync to remote
-map <F5> :call term_start("/bin/bash "..getcwd().."/run.sh", {"vertical":1})<cr>
+function s:YuanRunScript(path)
+  " check bufexists in case of buf already closed by user
+  if exists("s:YuanRunScriptBufNR") && bufexists(s:YuanRunScriptBufNR)
+    execute "bd" .. s:YuanRunScriptBufNR
+  endif
+
+  let s:YuanRunScriptBufNR = term_start(a:path, {"vertical": 1})
+endfunction
+map <silent> <F5> :call <SID>YuanRunScript("/bin/bash " .. getcwd() .. "/run.sh")<cr>
 
 
 """"""""""""""""""""""""""""""
