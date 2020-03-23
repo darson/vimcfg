@@ -12,9 +12,6 @@ filetype indent on
 " like <leader>w saves the current file
 let mapleader = ";"
 
-" Fast saving
-nmap <leader>w :w!<cr>
-
 " Line numner
 set nu
 
@@ -165,9 +162,6 @@ set wrap "Wrap lines
 """"""""""""""""""""""""""""""
 " => Customize key mapping
 """"""""""""""""""""""""""""""
-" useful for manual debugging, vim 8.0+ required
-map <F10> :vertical terminal<cr>
-
 " run auto command like rsync to remote
 function s:YuanRunScript(path)
   " check bufexists in case of buf already closed by user
@@ -219,5 +213,5 @@ map <leader>nf :NERDTreeFind<cr>
 """"""""""""""""""""""""""""""
 " => Tagbar
 """"""""""""""""""""""""""""""
-map <F8> :TagbarToggle<CR><c-w><c-w>
+map <leader>mm :TagbarToggle<CR><c-w><c-w>
 
