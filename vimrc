@@ -193,6 +193,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'preservim/nerdcommenter'
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
@@ -221,3 +222,10 @@ map <leader>nf :NERDTreeFind<cr>
 """"""""""""""""""""""""""""""
 map <leader>mm :TagbarToggle<CR><c-w><c-w>
 
+
+""""""""""""""""""""""""""""""
+" Additional customize rc
+""""""""""""""""""""""""""""""
+if filereadable(expand("~/myrc"))
+  source ~/myrc
+endif
