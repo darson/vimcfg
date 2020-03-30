@@ -174,7 +174,7 @@ endfunction
 map <silent> <F5> :call <SID>YuanRunScript("/bin/bash " .. getcwd() .. "/run.sh")<cr>
 
 " close tagbar,nerdtree,fugitive at once
-map <silent> <F4> :TagbarClose<cr>:NERDTreeClose<cr>gq
+map <silent> <F4> :TagbarClose<cr>:NERDTreeClose<cr>gq<esc>
 
 " disable F1
 map <F1> <Esc>
