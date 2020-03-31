@@ -194,6 +194,7 @@ Plug 'preservim/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'preservim/nerdcommenter'
 Plug 'tpope/vim-fugitive'
+Plug 'davidhalter/jedi-vim'
 
 call plug#end()
 
@@ -221,6 +222,14 @@ map <leader>nf :NERDTreeFind<cr>
 " => Tagbar
 """"""""""""""""""""""""""""""
 map <leader>mm :TagbarToggle<CR><c-w><c-w>
+
+
+""""""""""""""""""""""""""""""
+" => jedi-vim
+""""""""""""""""""""""""""""""
+let g:jedi#completions_command = "<C-N>"
+let g:jedi#popup_on_dot = 0
+let g:jedi#use_tabs_not_buffers = 1
 
 
 """"""""""""""""""""""""""""""
