@@ -15,6 +15,8 @@ let mapleader = ";"
 " Line numner
 set nu
 
+" Mouse should be used in normal mode
+set mouse=n
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -28,9 +30,9 @@ set wildmenu
 " Ignore compiled files
 set wildignore=*.o,*~,*.pyc
 if has("win16") || has("win32")
-    set wildignore+=.git\*,.hg\*,.svn\*
+  set wildignore+=.git\*,.hg\*,.svn\*
 else
-    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
+  set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
 endif
 
 "Always show current position
@@ -195,6 +197,7 @@ Plug 'tpope/vim-surround'
 Plug 'preservim/nerdcommenter'
 Plug 'tpope/vim-fugitive'
 Plug 'davidhalter/jedi-vim'
+Plug 'Yggdroot/indentLine'
 
 call plug#end()
 
