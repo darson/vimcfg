@@ -218,13 +218,12 @@ let g:NERDTreeWinSize=35
 let g:NERDTreeDirArrowExpandable = '>'
 let g:NERDTreeDirArrowCollapsible = '+'
 map <leader>nn :NERDTreeToggle<cr>
-map <leader>nb :NERDTreeFromBookmark<Space>
 map <leader>nf :NERDTreeFind<cr>
 
 """"""""""""""""""""""""""""""
 " => Tagbar
 """"""""""""""""""""""""""""""
-map <leader>mm :TagbarToggle<CR><c-w><c-w>
+map <leader>tt :TagbarToggle<CR><c-w><c-w>
 
 
 """"""""""""""""""""""""""""""
