@@ -234,6 +234,10 @@ let g:jedi#completions_command = "<C-N>"
 let g:jedi#popup_on_dot = 0
 let g:jedi#use_tabs_not_buffers = 1
 
+""""""""""""""""""""""""""""""
+" => indent-line
+""""""""""""""""""""""""""""""
+let g:indentLine_fileType = ['python']
 
 """"""""""""""""""""""""""""""
 " Additional customize rc
