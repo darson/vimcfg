@@ -237,7 +237,8 @@ let g:jedi#use_tabs_not_buffers = 1
 """"""""""""""""""""""""""""""
 " => indent-line
 """"""""""""""""""""""""""""""
-let g:indentLine_fileType = ['python']
+let g:indentLine_enabled = 0
+map <silent> <leader>i :IndentLinesToggle<CR>
 
 """"""""""""""""""""""""""""""
 " Additional customize rc
