@@ -89,7 +89,7 @@ set foldcolumn=1
 syntax enable
 
 try
-    colorscheme desert
+  colorscheme desert
 catch
 endtry
 
@@ -253,10 +253,15 @@ let g:indentLine_enabled = 0
 map <silent> <leader>i :IndentLinesToggle<CR>
 
 """"""""""""""""""""""""""""""
+" => lightline
+""""""""""""""""""""""""""""""
+set laststatus=2
+set noshowmode
+
+""""""""""""""""""""""""""""""
 " Additional customize rc
 """"""""""""""""""""""""""""""
 if filereadable(expand("~/myrc"))
   source ~/myrc
 endif
 
-set laststatus=2
