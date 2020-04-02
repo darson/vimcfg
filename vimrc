@@ -210,6 +210,7 @@ Plug 'preservim/nerdcommenter'
 Plug 'tpope/vim-fugitive'
 Plug 'davidhalter/jedi-vim'
 Plug 'Yggdroot/indentLine'
+Plug 'itchyny/lightline.vim'
 
 call plug#end()
 
@@ -257,3 +258,5 @@ map <silent> <leader>i :IndentLinesToggle<CR>
 if filereadable(expand("~/myrc"))
   source ~/myrc
 endif
+
+set laststatus=2
