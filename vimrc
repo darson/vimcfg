@@ -164,19 +164,31 @@ set wrap "Wrap lines
 """"""""""""""""""""""""""""""
 " => Customize key mapping
 """"""""""""""""""""""""""""""
-" run auto command like rsync to remote
-function s:YuanRunScript(path)
+" close script buffer if exists
+function s:CloseYuanScriptBuf()
   " check bufexists in case of buf already closed by user
   if exists("s:YuanRunScriptBufNR") && bufexists(s:YuanRunScriptBufNR)
     execute "bd" .. s:YuanRunScriptBufNR
   endif
+endfunction
 
+" run auto command like rsync to remote
+function s:YuanRunScript(path)
+  call s:CloseYuanScriptBuf()
   let s:YuanRunScriptBufNR = term_start(a:path, {"vertical": 1})
 endfunction
 map <silent> <F5> :call <SID>YuanRunScript("/bin/bash " .. getcwd() .. "/run.sh")<cr>
 
+" close all helper buffers
+function s:OmniClose()
+  TagbarClose
+  NERDTreeClose
+  normal gq
+  call s:CloseYuanScriptBuf()
+endfunction
+
 " close tagbar,nerdtree,fugitive at once
-map <silent> <F4> :TagbarClose<cr>:NERDTreeClose<cr>gq<esc>
+map <silent> <F4> :call <SID>OmniClose()<CR>
 
 " disable F1
 map <F1> <Esc>
