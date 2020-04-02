@@ -16,7 +16,7 @@ let mapleader = ";"
 set nu
 
 " Mouse should be used in normal mode
-set mouse=n
+set mouse=r
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
