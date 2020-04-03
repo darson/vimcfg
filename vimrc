@@ -257,6 +257,16 @@ map <silent> <leader>i :IndentLinesToggle<CR>
 """"""""""""""""""""""""""""""
 set laststatus=2
 set noshowmode
+let g:lightline = {
+  \ 'colorscheme': 'wombat',
+  \ 'active': {
+  \   'left': [ [ 'mode', 'paste' ],
+  \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+  \ },
+  \ 'component_function': {
+  \   'gitbranch': 'FugitiveHead'
+  \ },
+  \ }
 
 """"""""""""""""""""""""""""""
 " Additional customize rc
