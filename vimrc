@@ -268,6 +268,10 @@ let g:lightline = {
   \ },
   \ }
 
+" change wombat's active tabline to white bg color
+let s:lltabcolor=g:lightline#colorscheme#wombat#palette
+let s:lltabcolor.tabline.tabsel=[["#000000", "#e2e2e2", 0, 254]]
+
 """"""""""""""""""""""""""""""
 " Additional customize rc
 """"""""""""""""""""""""""""""
