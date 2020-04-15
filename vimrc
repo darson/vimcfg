@@ -185,6 +185,7 @@ function s:OmniClose()
   NERDTreeClose
   normal gq
   call s:CloseYuanScriptBuf()
+  cclose
 endfunction
 
 " close tagbar,nerdtree,fugitive at once
@@ -230,6 +231,10 @@ let NERDTreeIgnore = ['\.pyc$', '__pycache__']
 let g:NERDTreeWinSize=35
 let g:NERDTreeDirArrowExpandable = '>'
 let g:NERDTreeDirArrowCollapsible = '+'
+let g:NERDTreeMapOpenSplit = "s"
+let g:NERDTreeMapPreviewSplit = "gs"
+let g:NERDTreeMapOpenVSplit = "v"
+let g:NERDTreeMapPreviewVSplit = "gv"
 map <leader>nn :NERDTreeToggle<cr>
 map <leader>nf :NERDTreeFind<cr>
 
@@ -245,6 +250,7 @@ map <leader>tt :TagbarToggle<CR><c-w><c-w>
 let g:jedi#completions_command = "<C-N>"
 let g:jedi#popup_on_dot = 0
 let g:jedi#use_tabs_not_buffers = 1
+let g:jedi#show_call_signatures = 0
 
 """"""""""""""""""""""""""""""
 " => indent-line
