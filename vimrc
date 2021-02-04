@@ -3,6 +3,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sets how many lines of history VIM has to remember
 set history=500
+set textwidth=80
 
 " Enable filetype plugins
 filetype plugin on
@@ -13,7 +14,7 @@ filetype indent on
 let mapleader = ";"
 
 " Line numner
-set nu
+set number
 
 " Mouse should be used in normal mode
 set mouse=r
@@ -22,7 +23,7 @@ set mouse=r
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set 7 lines to the cursor - when moving vertically using j/k
-set so=7
+set scrolloff=7
 
 " Turn on the Wild menu
 set wildmenu
@@ -97,6 +98,7 @@ set background=dark
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
+set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
 
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
@@ -154,7 +156,6 @@ autocmd FileType python setlocal shiftwidth=2 softtabstop=2 tabstop=2
 
 " Linebreak on 500 characters
 set lbr
-set tw=500
 
 set ai "Auto indent
 set si "Smart indent
@@ -194,6 +195,8 @@ map <silent> <F4> :call <SID>OmniClose()<CR>
 " disable F1
 map <F1> <Esc>
 imap <F1> <Esc>
+map <F7> :cprevious<CR>
+map <F8> :cnext<CR>
 
 """"""""""""""""""""""""""""""
 " => Plugins
