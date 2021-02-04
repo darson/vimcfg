@@ -189,6 +189,15 @@ function s:OmniClose()
   cclose
 endfunction
 
+function s:OpenShell()
+  let l:file_parent_dir = expand("%:p:h")
+  let l:buf = term_start("/bin/bash", {"term_finish": "close"})
+  call term_sendkeys(l:buf, "cd " .. l:file_parent_dir .. " && clear\<cr>")
+endfunction
+
+map <silent> <F6> :call <SID>OpenShell()<CR>
+
+
 " close tagbar,nerdtree,fugitive at once
 map <silent> <F4> :call <SID>OmniClose()<CR>
 
