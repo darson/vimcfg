@@ -207,6 +207,10 @@ imap <F1> <Esc>
 map <F7> :cprevious<CR>
 map <F8> :cnext<CR>
 
+" scroll the other split
+map <C-S-E> <C-W>w<C-e><C-w>w
+map <C-S-Y> <C-W>w<C-y><C-w>w
+
 """"""""""""""""""""""""""""""
 " => Plugins
 """"""""""""""""""""""""""""""
